@@ -13,20 +13,23 @@ try{
       if(jerbs[i].BlockchainID == "1" && process.env.ETHEREUM == 'YES'){
         var offer_id = jerbs[i].OfferId
         var payout_com = "curl -s -X GET http://127.0.0.1:8900/api/latest/payout?offer_id="+offer_id
-        await exec(payout_com);
+        var result = await exec(payout_com);
         console.log('\x1b[32m','Triggered eth payout for offer '+jerbs[i].OfferId);
+        console.log('\x1b[33m',result.stdout);
 
       }else if(jerbs[i].BlockchainID == "2" && process.env.XDAI == 'YES'){
         var offer_id = jerbs[i].OfferId
         var payout_com = "curl -s -X GET http://127.0.0.1:8900/api/latest/payout?offer_id="+offer_id
-        await exec(payout_com);
+        var result = await exec(payout_com);
         console.log('\x1b[32m','Triggered xdai payout for offer '+jerbs[i].OfferId);
+        console.log('\x1b[33m',result.stdout);
 
       }else if(jerbs[i].BlockchainID == "3" && process.env.POLYGON == 'YES'){
         var offer_id = jerbs[i].OfferId
         var payout_com = "curl -s -X GET http://127.0.0.1:8900/api/latest/payout?offer_id="+offer_id
-        await exec(payout_com);
+        var result = await exec(payout_com);
         console.log('\x1b[32m','Triggered polygon payout for offer '+jerbs[i].OfferId);
+        console.log('\x1b[33m',result.stdout);
 
       }else{
         console.log('\x1b[35m','Skipped payout for offer '+jerbs[i].OfferId)
