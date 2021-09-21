@@ -5,6 +5,6 @@ Manual payout script for Origintrail jobs. Please ENSURE YOU ARE AWARE OF GAS CO
 <li>cd OTCosmicPayouts</li>
 <li>sudo npm install dotenv</li>
 <li>sudo nano .env</li>
-<li>Provide ERC725 IDs and set networks to YES if you want them to payout.</li>
+<li>Provide NODE ID and set networks to YES if you want them to payout.</li>
 <li>sudo node phat_payout.js</li>
 </ol>
