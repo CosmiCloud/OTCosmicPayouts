@@ -10,7 +10,6 @@ try{
     var jerbs = JSON.parse(jerbs.stdout);
 
     for(var i = 0; i < (jerbs.length); i++) {
-      console.log(jerbs[i].Paidout)
       if(jerbs[i].BlockchainID == "1" && process.env.ETHEREUM == 'YES' && jerbs[i].Paidout == false){
         var offer_id = jerbs[i].OfferId
         var payout_com = "curl -s -X GET http://127.0.0.1:8900/api/latest/payout?offer_id="+offer_id
